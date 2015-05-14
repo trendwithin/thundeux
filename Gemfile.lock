@@ -148,6 +148,9 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
+    passenger (5.0.7)
+      rack
+      rake (>= 0.8.1)
     pg (0.18.1)
     poltergeist (1.6.0)
       capybara (~> 2.1)
@@ -271,6 +274,7 @@ DEPENDENCIES
   launchy (~> 2.4.3)
   minitest-rails-capybara (~> 2.1.1)
   minitest-reporters (~> 1.0.16)
+  passenger (~> 5.0.7)
   pg (~> 0.18.1)
   poltergeist (~> 1.6.0)
   pry (~> 0.10.1)
