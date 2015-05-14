@@ -23,6 +23,7 @@ group :development, :test do
   gem 'launchy', '~> 2.4.3'
   gem 'minitest-rails-capybara', '~> 2.1.1'
   gem 'minitest-reporters', '~> 1.0.16'
+  gem 'poltergeist', '~> 1.6.0'
   gem 'pry', '~> 0.10.1'
   gem 'pry-rails', '~> 0.3.4'
   gem 'pry-rescue', '~> 1.4.2'
