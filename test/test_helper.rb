@@ -24,3 +24,12 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+class ActionDispatch::IntegrationTest
+  include Capybara::DSL
+  include Capybara::Assertions
+
+  def teardown
+    Capybara.reset_sessions!
+  end
+end
