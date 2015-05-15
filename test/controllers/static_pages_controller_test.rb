@@ -11,4 +11,9 @@ class StaticPagesControllerTest < ActionController::TestCase
     get :home
     assert_select "button", "Sign up"
   end
+
+  test 'should have login' do
+    get :home
+    assert_select "button", 'Login'
+  end
 end

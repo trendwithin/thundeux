@@ -5,11 +5,12 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-user_1:
+admin:
   email: me@you.com
   password: password
+  role: admin
 
-user_2:
+user:
   email: you@me.com
-  password: password
+  password: <%= Devise.bcrypt(User, "password") %>
 

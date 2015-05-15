@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass'
+gem 'bcrypt', '~> 3.1.10'
 
 group :development, :test do
   gem 'byebug'
@@ -31,6 +32,7 @@ group :development, :test do
   gem 'pry-rescue', '~> 1.4.2'
   gem 'spring'
   gem 'web-console', '~> 2.0'
+  gem 'mini_backtrace', '~> 0.1.3'
 end
 
 group :production do

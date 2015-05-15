@@ -3,7 +3,7 @@ require "test_helper"
 class UserTest < ActiveSupport::TestCase
 
   def setup
-    @user ||= users(:user_1)
+    @user ||= users(:user)
   end
 
   test 'user should be valid' do
@@ -12,6 +12,16 @@ class UserTest < ActiveSupport::TestCase
 
   test 'presence of email' do
     @user.email = nil
+    assert_not @user.valid?
+  end
+
+  test 'uniqueness of email' do
+    dup = @user.dup
+    assert_not dup.valid?
+  end
+
+  test 'email must be lower case' do
+    @user.email = 'EmAiL.com'
     assert_not @user.valid?
   end
 
