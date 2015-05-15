@@ -12,5 +12,5 @@ admin:
 
 user:
   email: you@me.com
-  password: password
+  password: <%= Devise.bcrypt(User, "password") %>
 

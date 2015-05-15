@@ -23,6 +23,12 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def login
+    visit new_user_session_path
+    fill_in 'Email', with: users(:user).email
+    fill_in 'Password', with: 'password'
+    within(:css, 'div.actions') { click_button 'Log in' }
+  end
 end
 
 class ActionDispatch::IntegrationTest

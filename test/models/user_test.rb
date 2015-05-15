@@ -20,6 +20,11 @@ class UserTest < ActiveSupport::TestCase
     assert_not dup.valid?
   end
 
+  test 'email must be lower case' do
+    @user.email = 'EmAiL.com'
+    assert_not @user.valid?
+  end
+
   test 'max length of email is 255 chars' do
     @user.email = 'a' * 249 + "@i.com"
     assert @user.valid?
