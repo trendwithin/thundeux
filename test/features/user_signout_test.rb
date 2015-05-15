@@ -11,6 +11,5 @@ feature "User Logs out" do
     page.must_have_content 'Signed in successfully.'
     click_link 'Logout'
     page.must_have_content 'Signed out successfully.'
-    save_and_open_page
   end
 end
