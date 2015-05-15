@@ -41,3 +41,7 @@ class ActionDispatch::IntegrationTest
     Capybara.reset_sessions!
   end
 end
+
+class ActionController::TestCase
+  include Devise::TestHelpers
+end

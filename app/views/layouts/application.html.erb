@@ -7,10 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'static_pages/header'  %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-<%= yield %>
-
+<%= render 'static_pages/header'  %>
+<% flash.each do |type, message| %>
+  <div class="alert <%= alert_class_for(type) %> alert-dismissible fade in">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <%= message %>
+  </div>
+<% end %>
+<div class='container'>
+  <div class='row'>
+    <div class='col-sm-6 col-md-8'>
+      <%= yield %>
+    </div>
+    <div class='col-sm-6 col-md-4 .visible-sm-block, hidden-xs'>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, ut, nostrum. Ducimus voluptatem tenetur officia dolores dignissimos non repellat perspiciatis tempore obcaecati facere animi pariatur earum placeat, fugiat, quam provident.</div>
+      <div>Perferendis odit inventore quasi ducimus sint repellendus, sunt fugit doloremque aliquam, ipsam nostrum reiciendis quaerat eligendi! Atque laudantium tempora voluptatibus magni architecto vitae repellendus, sit voluptate! Eaque, impedit provident magni!</div>
+      <div>Temporibus quo architecto vitae accusamus mollitia sapiente suscipit molestias, eveniet, sequi. Et quibusdam quod placeat maxime illo autem consectetur rerum molestiae eos amet, ipsum omnis, libero, at voluptas obcaecati expedita!</div>
+      <div>Voluptatem asperiores placeat cum explicabo repellendus magnam deleniti dolorum minus! Quaerat et ab totam consequatur. Ea accusantium saepe hic praesentium error. Asperiores, repellat vel distinctio assumenda provident possimus deserunt. Suscipit!</div>
+      <div>Corrupti, molestiae sequi neque id. Illum quibusdam enim laborum cumque non iusto nulla nisi facilis, ab officia numquam illo veritatis molestias! Laudantium dolore consectetur praesentium nisi eveniet fugiat ipsa culpa.</div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
