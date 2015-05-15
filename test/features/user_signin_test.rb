@@ -17,7 +17,7 @@ feature "UserSignin" do
     fill_in "Email", with: @user.email
     fill_in "Password", with: "password"
     within(:css, 'div.actions') { click_button 'Log in' }
-    page.text.must_include "Login Invalid email or password."
+    page.text.must_include "Invalid email or password."
   end
 
   scenario 'Incorrect Password' do
@@ -25,6 +25,6 @@ feature "UserSignin" do
     fill_in 'Email', with: @user.email
     fill_in 'Password', with: 'password1'
     within(:css, 'div.actions') { click_button 'Log in' }
-    page.text.must_include "Login Invalid email or password."
+    page.text.must_include "Invalid email or password."
   end
 end
