@@ -32,6 +32,7 @@ group :development, :test do
   gem 'pry-rescue', '~> 1.4.2'
   gem 'spring'
   gem 'web-console', '~> 2.0'
+  gem 'mini_backtrace', '~> 0.1.3'
 end
 
 group :production do
