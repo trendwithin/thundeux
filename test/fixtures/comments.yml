@@ -2,11 +2,11 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user: 
-  memory: 
-  body: MyText
+  user: users(:user)
+  memory: memories(:one)
+  body: This is in response to the first memory
 
 two:
-  user: 
-  memory: 
-  body: MyText
+  user: users(:user)
+  memory: memories(:two)
+  body: Monkey Monkey

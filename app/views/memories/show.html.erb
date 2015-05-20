@@ -1,0 +1,28 @@
+<p>
+  <em>Name</em>
+  <%= @memory.name %>
+</p>
+
+<p>
+  <em>Description</em>
+  <%= @memory.description %>
+</p>
+
+<h2> Comments</h2>
+<% @memory.comments.each do |comment| %>
+
+<p>
+  <strong>Comment</strong>
+  <%= comment.body %>
+</p>
+<% end %>
+<h2>Add a comment:</h2>
+<%= form_for([@memory, @memory.comments.build]) do |f| %>
+  <p>
+    <%= f.label :body %> <br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+  <%= f.submit %>
+  </p>
+  <% end %>

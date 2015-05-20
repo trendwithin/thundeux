@@ -14,3 +14,7 @@ user:
   email: you@me.com
   password: <%= Devise.bcrypt(User, "password") %>
 
+Vic:
+  email: bloodspl@er.com
+  password: <%= Devise.bcrypt(User, "password") %>
+
