@@ -4,9 +4,9 @@
 one:
   name: Tix from a show
   description: 1991 Jane's Addiction Pixies Primus
-  user:
+  user: users(:Vic)
 
 two:
   name: Carnival Glass
   description: Vintage glassware from the set Carnival of Souls
-  user:
+  user: users(:Vic)
