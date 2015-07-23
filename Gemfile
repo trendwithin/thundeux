@@ -16,6 +16,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass'
 gem 'bcrypt', '~> 3.1.10'
+gem 'omniauth-twitter', '~> 1.2.0'
 
 group :development, :test do
   gem 'byebug'
