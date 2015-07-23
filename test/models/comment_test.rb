@@ -7,7 +7,7 @@ class CommentTest < ActiveSupport::TestCase
   end
 
   def test_valid
-    assert comment.valid?
+    refute comment.valid?
   end
 
 end

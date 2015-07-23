@@ -1,3 +1,32 @@
-Smoke some ERB bitches! <br />
-Memories, of the times we left behind <br />
-<%= @memories.first %>
+<h1>Memories</h1>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Memory</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @memories.each do |memory| %>
+    <tr id="<%= dom_id(memory) %>">
+      <td class="name"><%= memory.name %></td>
+      <td class="description"><%= memory.description %></td>
+      <td><%= link_to 'Show', memory, remote: true %></td>
+
+      <% if policy(memory).edit? %>
+        <td><%= link_to 'Edit', edit_memory_path(memory) %></td>
+      <% end %>
+      <% if policy(memory).destroy? %>
+        <td><%= link_to 'Destroy', memory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+ <% if user_signed_in? %>
+<%= link_to 'New Memory', new_memory_path, id: "new_link" %>
+<% end %>

@@ -13,8 +13,14 @@ admin:
 user:
   email: you@me.com
   password: <%= Devise.bcrypt(User, "password") %>
+  role: registered
 
 Vic:
   email: bloodspl@er.com
-  password: <%= Devise.bcrypt(User, "password") %>
+  encrypted_password: <%= Devise.bcrypt(User, "password") %>
+  role: registered
 
+shane:
+  email: shane@theshield.net
+  encrypted_password: <%= Devise.bcrypt(User, "password") %>
+  role: registered
