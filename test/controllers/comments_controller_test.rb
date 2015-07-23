@@ -6,7 +6,7 @@ class CommentsControllerTest < ActionController::TestCase
     @memory = memories(:one)
   end
 
-  test 'POST: Adds a Comment To an Existing Memory' do
+  test 'POST: User adds a Comment To an Existing Memory' do
     @user = users(:shane)
     sign_in @user
     assert_difference('Comment.count') do
