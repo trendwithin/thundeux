@@ -78,20 +78,8 @@ end
   end
 
   test 'Delete: Users Are Not Allowed to Delete Memories' do
-    skip ('Return to this Test- Passing when it should not in theory')
-    sign_out @user
     refute_difference "Memory.count" do
       delete :destroy, id: @memory
     end
-  end
-
-  test 'that memories associated comments render' do
-    skip ('Come back to this test when comments are implemented further')
-    memory = memories(:one)
-    comment = comments(:one)
-    get :show, id: memory
-    must_respond_with :success
-    # assigns(:memory).must_equal(memory)
-    # assigns(:comment).must_equal(comment)
   end
 end
