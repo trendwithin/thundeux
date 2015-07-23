@@ -1,8 +1,10 @@
 class CommentsController < ApplicationController
+  after_action :verify_authorized, unless: :devise_controller?
 
   def create
     @memory = Memory.find(params[:memory_id])
     @comment = @memory.comments.build(comment_params)
+    authorize @comment
     if @comment.save
       redirect_to memory_path(@memory), notice: 'Comment sent'
     else
