@@ -1,4 +1,5 @@
 class MemoriesController < ApplicationController
+  before_action :set_memory, only: [:show, :edit, :update, :destroy]
   after_action :verify_authorized, unless: :devise_controller?
 
   def index
@@ -12,12 +13,10 @@ class MemoriesController < ApplicationController
   end
 
   def show
-    @memory = Memory.find(params[:id])
     authorize @memory
   end
 
   def edit
-    @memory = Memory.find(params[:id])
     authorize @memory
   end
 
@@ -34,7 +33,6 @@ class MemoriesController < ApplicationController
   end
 
   def update
-    @memory = Memory.find(params[:id])
     authorize @memory
     respond_to do |format|
       if @memory.update(memory_params)
@@ -46,12 +44,15 @@ class MemoriesController < ApplicationController
   end
 
   def destroy
-    @memory = Memory.find(params[:id])
-    @memory.destroy
     authorize @memory
+    @memory.destroy
   end
 
   private
+
+  def set_memory
+    @memory = Memory.find(params[:id])
+  end
 
     def memory_params
       params.require(:memory).permit(:user_id, :name, :description)
