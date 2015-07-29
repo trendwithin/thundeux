@@ -21,10 +21,4 @@ class CommentsControllerTest < ActionController::TestCase
       assert_redirected_to root_path
     end
   end
-
-
-  # test 'new memory' do
-  #   get :new
-  #   assert_response :success
-  # end
 end
