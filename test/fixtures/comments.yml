@@ -5,8 +5,16 @@ one:
   user: users(:user)
   memory: memories(:one)
   body: This is in response to the first memory
+  approved: true
 
 two:
   user: users(:user)
   memory: memories(:two)
   body: Monkey Monkey
+  approved: true
+
+three:
+  user: users(:user)
+  memory: memories(:two)
+  body: This is an unapproved comment pending acceptance
+  approved: false  
