@@ -35,14 +35,14 @@ class ActiveSupport::TestCase
   end
 end
 
-class ActionDispatch::IntegrationTest
-  include Capybara::DSL
-  include Capybara::Assertions
-
-  def teardown
-    Capybara.reset_sessions!
-  end
-end
+# class ActionDispatch::IntegrationTest
+#   include Capybara::DSL
+#   include Capybara::Assertions
+#
+#   def teardown
+#     Capybara.reset_sessions!
+#   end
+# end
 
 class ActionController::TestCase
   include Devise::TestHelpers

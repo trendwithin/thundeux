@@ -13,7 +13,7 @@
     <tr id="<%= dom_id(memory) %>">
       <td class="name"><%= memory.name %></td>
       <td class="description"><%= memory.description %></td>
-      <td><%= link_to 'Show', memory, remote: true %></td>
+      <td><%= link_to 'Show', memory_path(memory) %></td>
 
       <% if policy(memory).edit? %>
         <td><%= link_to 'Edit', edit_memory_path(memory) %></td>
