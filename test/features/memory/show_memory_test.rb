@@ -2,7 +2,7 @@ require "test_helper"
 
 feature "Memory::ShowMemory" do
   before do
-    @user = users(:Vic)
+    @user = users(:vic)
     @memory = memories(:one)
     @shanes_memory = memories(:three)
   end

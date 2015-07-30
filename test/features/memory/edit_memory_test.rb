@@ -1,7 +1,7 @@
 require "test_helper"
 feature "Memory::EditMemory" do
   before do
-    @user = users(:Vic)
+    @user = users(:vic)
     @memory = memories(:one)
   end
 
