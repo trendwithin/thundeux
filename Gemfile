@@ -33,6 +33,7 @@ group :development, :test do
   gem 'pry-rescue', '~> 1.4.2'
   gem 'spring'
   gem 'web-console', '~> 2.0'
+  gem 'better_errors', '~> 2.1.1'
 end
 
 group :production do
