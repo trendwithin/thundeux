@@ -33,6 +33,11 @@ class ActiveSupport::TestCase
     fill_in 'Password', with: 'password'
     within(:css, 'div.actions') { click_button 'Log in' }
   end
+
+  def logout user
+    visit root_path
+    click_link 'Logout'
+  end
 end
 
 # class ActionDispatch::IntegrationTest

@@ -5,7 +5,7 @@ class MemoriesControllerTest < ActionController::TestCase
 before(:each) do
   # @user = User.new(email: "spl@er.com", password: "password", role: "registered")
   # @user.save
-  @user = users(:Vic)
+  @user = users(:vic)
   @memory = memories(:one)
 end
 

@@ -2,11 +2,25 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user: users(:user)
-  memory: memories(:one)
+  user: user
+  memory: one
   body: This is in response to the first memory
+  approved: true
 
 two:
-  user: users(:user)
-  memory: memories(:two)
+  user: user
+  memory: two
   body: Monkey Monkey
+  approved: true
+
+three:
+  user: user
+  memory: two
+  body: This is an unapproved comment pending acceptance
+  approved: false
+
+memory_one_comment:
+  user: shane
+  memory: one
+  body: This is a comment for the memory of user vic. Initial Approved False
+  approved: false

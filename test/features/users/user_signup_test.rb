@@ -2,7 +2,6 @@ require "test_helper"
 
 feature "User" do
   scenario "Signs up" do
-    skip
     visit root_path
     click_link 'Sign up'
     fill_in 'Email', with: 'maude@harrold.com'

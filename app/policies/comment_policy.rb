@@ -8,11 +8,12 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def edit?
-    update?
+    false
   end
 
   def update?
     return true if user.present? && user.admin?
+    user.present? && record.memory.user == user
   end
 
   def create?
@@ -22,6 +23,7 @@ class CommentPolicy < ApplicationPolicy
 
   def destroy?
     return true if user.admin?
+    user.present? && record.memory.user == user
   end
 
   private

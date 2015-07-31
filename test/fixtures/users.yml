@@ -15,7 +15,7 @@ user:
   password: <%= Devise.bcrypt(User, "password") %>
   role: registered
 
-Vic:
+vic:
   email: bloodspl@er.com
   encrypted_password: <%= Devise.bcrypt(User, "password") %>
   role: registered
