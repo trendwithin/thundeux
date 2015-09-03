@@ -3,8 +3,6 @@ require "test_helper"
 class MemoriesControllerTest < ActionController::TestCase
 
 before(:each) do
-  # @user = User.new(email: "spl@er.com", password: "password", role: "registered")
-  # @user.save
   @user = users(:vic)
   @memory = memories(:one)
 end
@@ -16,7 +14,6 @@ end
   end
 
   test 'new memory form' do
-    # sign_in :registered, @user
     sign_in @user
     assert_response :success
     get :new
