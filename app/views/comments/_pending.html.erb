@@ -1,0 +1,10 @@
+<% @memory.comments.pending_comment.each do |pending| %>
+  <p>
+  <%= pending.body %>
+  <%= form_for([pending.memory, pending]) do |f| %>
+    <%= f.submit 'Approve', class: "button success round" %>
+    <%= f.hidden_field :approved, value: true %>
+  <% end %>
+  <%= button_to "Decline", ([pending.memory, pending]), method: :delete, data: {confirm: 'Are you sure?' } %>
+  </p>
+<% end %>

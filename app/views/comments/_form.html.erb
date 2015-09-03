@@ -1,20 +1,7 @@
-<% if @memory.comments.pending_comment.count > 0 && current_user == @memory.user %>
-  <% @memory.comments.pending_comment.each do |pending| %>
-    <p>
-      <%= pending.body %>
-      <%= form_for([pending.memory, pending]) do |f| %>
-        <%= f.submit 'Approve', class: "button success round" %>
-        <%= f.hidden_field :approved, value: true %>
-      <% end %>
-
-      <%#= form_for([pending.memory, pending]) do |f| %>
-        <%#= f.hidden_field :approved, value: true %>
-        <%#= f.submit 'Destroy', method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert round" %>
-      <%# end %>
-      <%= button_to "Decline", ([pending.memory, pending]), method: :delete, data: {confirm: 'Are you sure?' } %>
-    </p>
-    <% end %>
+<% if pending? current_user, @memory %>
+<%= render partial: 'comments/pending', memory: @memory %>
 <% end %>
+
 <% if policy(Comment).new? %>
   <h2>Add a comment:</h2>
   <%= form_for([@memory, @memory.comments.build]) do |f| %>
@@ -29,10 +16,10 @@
 <% end %>
 
 <h2> Comments</h2>
-  <% @memory.comments.approved_comment.each do |comment| %>
-    <p>
-      <strong>Comment</strong>
-      <%= comment.body %>
-      <%= comment.approved %>
-    </p>
-  <% end %>
+<% @memory.comments.approved_comment.each do |comment| %>
+  <p>
+    <strong>Comment</strong>
+    <%= comment.body %>
+    <%= comment.approved %>
+  </p>
+<% end %>

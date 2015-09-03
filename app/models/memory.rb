@@ -4,4 +4,8 @@ class Memory < ActiveRecord::Base
 
   validates :name, presence: true
   validates :description, presence: true
+
+    def pending_comments?
+      self.comments.pending_comment.count > 0
+    end
 end
