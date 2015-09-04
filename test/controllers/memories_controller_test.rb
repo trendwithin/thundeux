@@ -8,6 +8,7 @@ before(:each) do
 end
 
   test 'index page list memories' do
+    sign_in @user
     get :index
     assert_response :success
     assert_not_nil assigns(:memories)
