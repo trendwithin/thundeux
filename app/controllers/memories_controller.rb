@@ -55,6 +55,6 @@ class MemoriesController < ApplicationController
   end
 
     def memory_params
-      params.require(:memory).permit(:user_id, :name, :description)
+      params.require(:memory).permit(:name, :description, :tag_list)
     end
 end
