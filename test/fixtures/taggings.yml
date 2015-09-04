@@ -8,3 +8,7 @@ one:
 two:
   memory: three
   tag: two
+
+three:
+  memory: two
+  tag: one
