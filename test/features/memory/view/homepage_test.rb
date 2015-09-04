@@ -7,6 +7,8 @@ feature "Memory Home Page View" do
   scenario "the page should have related memories" do
     login @user
     page.must_have_content 'Related Memories'
-    page.must_have_content 'Carnival Glass'
+    within('.related-memories') do
+      page.must_have_content 'Carnival Glass'
+    end
   end
 end
