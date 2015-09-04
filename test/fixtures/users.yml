@@ -11,8 +11,8 @@ admin:
   role: admin
 
 user:
-  email: you@me.com
-  password: <%= Devise.bcrypt(User, "password") %>
+  email: user@example.com
+  encrypted_password: <%= Devise.bcrypt(User, "password") %>
   role: registered
 
 vic:
