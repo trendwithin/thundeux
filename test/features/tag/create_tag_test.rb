@@ -31,11 +31,12 @@ feature "Tag::CreateTag" do
   end
 
   scenario "User Leaves Tags Blank" do
+    skip 'How to test for this within Memory controller?'
     login @user
     visit new_memory_path
     fill_in "Name", with: "A New Memory"
     fill_in "Description", with: "A New Description"
     click_on "Create Memory"
-    page.must_have_content "Tag can't be blank."
+    page.must_have_content "Tags can't be blank."
   end
 end
