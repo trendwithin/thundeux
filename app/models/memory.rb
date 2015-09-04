@@ -10,4 +10,15 @@ class Memory < ActiveRecord::Base
     def pending_comments?
       self.comments.pending_comment.count > 0
     end
+
+    # Tag Related Methods
+    def tag_list
+      tags.map(&:name).join(", ")
+    end
+
+    def tag_list=(names)
+      self.tags = names.split(",").map do |n|
+        Tag.where(name: n.strip).first_or_create!
+      end
+    end
 end
