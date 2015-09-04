@@ -22,4 +22,9 @@ class MemoryTest < ActiveSupport::TestCase
     related = Memory.related_tags(user).related_users(user)
     assert true, related.include?(memories(:two).name)
   end
+
+  def test_listing_of_recent_memories_of_users_includes
+    recent = Memory.recent_memories
+    assert true, recent.include?(memories(:one).name)
+  end
 end

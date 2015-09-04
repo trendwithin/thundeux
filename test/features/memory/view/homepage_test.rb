@@ -16,4 +16,12 @@ feature "Memory Home Page View" do
     login users(:user)
     page.must_have_content 'No Related Memories'
   end
+
+  scenario 'there should be recent memories' do
+    login @user
+    page.must_have_content 'Recent Memories'
+    within('.recent-memories') do
+      page.must_have_content 'Comic Books'
+    end
+  end
 end
