@@ -11,4 +11,9 @@ feature "Memory Home Page View" do
       page.must_have_content 'Carnival Glass'
     end
   end
+
+  scenario "there are no related memories" do
+    login users(:user)
+    page.must_have_content 'No Related Memories'
+  end
 end
