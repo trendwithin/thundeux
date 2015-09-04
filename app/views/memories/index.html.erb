@@ -13,6 +13,21 @@
   </div>
 </div>
 
+<h1>Recent Memories</h1>
+<div class="small-12 medium-12 large-12 columns panel panel-primary radius">
+  <div class="recent-memories">
+    <% @recent_memories = most_recent_memories current_user %>
+    <% if @recent_memories.size > 0 %>
+      <% @recent_memories.each do |memory| %>
+        <%= memory.name %>
+        <%= memory.tag_list %>
+      <% end %>
+    <% else %>
+      <strong> No Recent Memories
+    <% end %>
+  </div>
+</div>
+
 <h1>Memories</h1>
 <table id="list">
   <thead>
