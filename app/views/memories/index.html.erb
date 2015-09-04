@@ -1,3 +1,18 @@
+<h1>Related Memories</h1>
+<div class="small-12 medium-12 large-12 columns panel radius">
+  <div class="related-memories">
+    <% @related_memories = related_memories_to_user current_user %>
+    <% if @related_memories.size > 0 %>
+      <% @related_memories.each do |memory| %>
+        <%= memory.name %>
+        <%= memory.tag_list %>
+      <% end %>
+    <% else %>
+      <strong> No Related Memories
+    <% end %>
+  </div>
+</div>
+
 <h1>Memories</h1>
 <table id="list">
   <thead>
