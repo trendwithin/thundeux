@@ -6,4 +6,8 @@ module MemoriesHelper
   def related_memories_to_user user
     Memory.related_tags(user).related_users(user).first(6)
   end
+
+  def most_recent_memories user
+    Memory.recent_memories.related_users(user).first(6)
+  end
 end
