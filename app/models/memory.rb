@@ -12,6 +12,11 @@ class Memory < ActiveRecord::Base
     end
 
     # Tag Related Methods
+
+    def self.tagged_with(name)
+      Tag.find_by_name!(name).memories
+    end
+
     def tag_list
       tags.map(&:name).join(", ")
     end
