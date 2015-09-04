@@ -2,9 +2,9 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  memory: 
-  tag: 
+  memory: three
+  tag: one
 
 two:
-  memory: 
-  tag: 
+  memory: three
+  tag: two
