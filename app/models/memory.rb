@@ -7,6 +7,8 @@ class Memory < ActiveRecord::Base
   validates :name, presence: true
   validates :description, presence: true
 
+  scope :related_tags, -> (u) { joins(:tags).where(tags: { id: u.tags.pluck(&:id).flatten })}
+  scope :related_users, -> (u) { joins(:user).where.not(users: { id: u })}
     def pending_comments?
       self.comments.pending_comment.count > 0
     end
